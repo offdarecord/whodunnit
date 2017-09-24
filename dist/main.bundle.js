@@ -483,7 +483,7 @@ var _a;
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- main app container -->\r\n<div class=\"jumbotron\">\r\n    <div class=\"container\">\r\n        <div class=\"col-sm-8 col-sm-offset-2\">\r\n            <alert></alert>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- credits -->\r\n<div class=\"text-center\">\r\n    <p>\r\n        <a href=\"http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial\" target=\"_top\">Angular 2 User Registration and Login Example & Tutorial</a>\r\n    </p>\r\n    <p>\r\n        <a href=\"http://jasonwatmore.com\" target=\"_top\">JasonWatmore.com</a>\r\n    </p>\r\n</div>"
+module.exports = "<!-- main app container -->\r\n<div class=\"jumbotron\">\r\n    <div class=\"container\">\r\n        <div class=\"col-sm-8 col-sm-offset-2\">\r\n            <alert></alert>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Main Image -->\r\n<div class=\"text-center\">\r\n    <span><img src=\"images/hacked.svg\"</span>\r\n</div>"
 
 /***/ }),
 
