@@ -2,7 +2,7 @@
     <h1>Hi {{currentUser.firstName}}!</h1>
     <p>You're logged in to the Cyber Kids website.</p>
     </br>
-    <span ng-if="currentUser.username == admin">
+    <span ng-if="currentUser.username == 'admin'">
     <h3>All registered users:</h3>
     <ul>
         <li *ngFor="let user of users">
