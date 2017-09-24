@@ -40,3 +40,4 @@ typings
 # Generated files
 # Ignoring ignore for dist for serving the dist/ folder in subtree
 # dist
+.DB_Store
