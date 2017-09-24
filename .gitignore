@@ -38,4 +38,5 @@ typings
 .node_repl_history
 
 # Generated files
-dist
+# Ignoring ignore for dist for serving the dist/ folder in subtree
+# dist
