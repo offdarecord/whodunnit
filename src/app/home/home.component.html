@@ -2,7 +2,7 @@
     <h1>Hi {{currentUser.firstName}}!</h1>
     <p>You're logged in to the Cyber Kids website.</p>
     </br>
-    <span>
+    <div *ngif="isAdmin">
     <h3>All registered users:</h3>
     <ul>
         <li *ngFor="let user of users">
@@ -10,6 +10,6 @@
             - <a (click)="deleteUser(user.id)">Delete</a>
         </li>
     </ul>
-    </span>
+    </div>
     <p><a [routerLink]="['/login']">Logout</a></p>
 </div>
