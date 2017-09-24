@@ -609,7 +609,7 @@ exports.routing = router_1.RouterModule.forRoot(appRoutes);
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n    <h1>Hi {{currentUser.firstName}}!</h1>\r\n    <p>You're logged in to the Cyber Kids website.</p>\r\n    </br>\r\n    <div *ngif=\"isAdmin\">\r\n    <h3>All registered users:</h3>\r\n    <ul>\r\n        <li *ngFor=\"let user of users\">\r\n            {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n            - <a (click)=\"deleteUser(user.id)\">Delete</a>\r\n        </li>\r\n    </ul>\r\n    </div>\r\n    <p><a [routerLink]=\"['/login']\">Logout</a></p>\r\n</div>"
+module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n    <h1>Hi {{currentUser.firstName}}!</h1>\r\n    <p>You're logged in to the Cyber Kids website.</p>\r\n    <div *ngif=\"isAdmin\">\r\n    <h3>All registered users:</h3>\r\n    <ul>\r\n        <li *ngFor=\"let user of users\">\r\n            {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n            - <a (click)=\"deleteUser(user.id)\">Delete</a>\r\n        </li>\r\n    </ul>\r\n    </div>\r\n    <p><a [routerLink]=\"['/login']\">Logout</a></p>\r\n</div>"
 
 /***/ }),
 
