@@ -1,5 +1,6 @@
-# angular2-registration-login-example-webpack
+# Cyber Kids Who Dunn It challenge
 
-Angular 2 User Registration and Login Example with Webpack
+CTF style "Who Dunn It" game for children
 
-To see a demo and further details go to http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial
+Forked from:
+//github.com/cornflourblue/angular2-registration-login-example-webpack
