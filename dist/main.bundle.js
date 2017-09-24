@@ -483,7 +483,7 @@ var _a;
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- main app container -->\r\n<div class=\"jumbotron\">\r\n    <div class=\"container\">\r\n        <div class=\"col-sm-8 col-sm-offset-2\">\r\n            <alert></alert>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Main Image -->\r\n<div class=\"text-center\">\r\n    <span><img src=\"images/hacked.svg\"</span>\r\n</div>"
+module.exports = "<!-- main app container -->\r\n<div class=\"jumbotron\">\r\n    <div class=\"container\">\r\n        <div class=\"col-sm-8 col-sm-offset-2\">\r\n            <alert></alert>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Main Image -->\r\n<div class=\"text-center\">\r\n    <span><img src=\"images/hacked.svg\">Website status : HACKED</span>\r\n</div>"
 
 /***/ }),
 
