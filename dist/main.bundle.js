@@ -498,21 +498,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var _services_1 = __webpack_require__("../../../../../src/app/_services/index.ts");
 var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
 __webpack_require__("../../../../../src/assets/app.css");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(userService) {
+        this.userService = userService;
+        this.adminUser = { "firstName": "Cyber Kids Website", "lastName": "Administrator", "username": "admin", "password": "admin", "id": "99" };
+        this.unicornUser = { "firstName": "Bruce", "lastName": "the unicorn", "username": "unicorn", "password": "123456", "id": "98" };
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.userService.create(this.adminUser);
+        this.userService.create(this.unicornUser);
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
         template: __webpack_require__("../../../../../src/app/app.component.html")
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof _services_1.UserService !== "undefined" && _services_1.UserService) === "function" && _a || Object])
 ], AppComponent);
 exports.AppComponent = AppComponent;
+var _a;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
