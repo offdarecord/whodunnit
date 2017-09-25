@@ -483,7 +483,7 @@ var _a;
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- main app container -->\r\n<div class=\"jumbotron\">\r\n    <div class=\"container\">\r\n        <div class=\"col-sm-8 col-sm-offset-2\">\r\n            <alert></alert>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Main Image -->\r\n<div class=\"text-center\">\r\n    <span><img src=\"assets/images/hacked.svg\"></span>\r\n</div>"
+module.exports = "<!-- main app container -->\r\n<div class=\"jumbotron\">\r\n    <div class=\"container\">\r\n        <div class=\"col-sm-8 col-sm-offset-2\">\r\n            <alert></alert>\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n<!-- Main Image -->\r\n<div class=\"text-center\">\r\n    <span><img src=\"assets/images/Logo_hacked.png\" class=\"img-rounded\" width=\"20%\" height=\"20%\"></span>\r\n</div>"
 
 /***/ }),
 
@@ -508,7 +508,7 @@ __webpack_require__("../../../../../src/assets/app.css");
 var AppComponent = (function () {
     function AppComponent(userService) {
         this.userService = userService;
-        this.adminUser = { "firstName": "Cyber Kids Website", "lastName": "Administrator", "username": "admin", "password": "admin", "id": "99" };
+        this.adminUser = { "firstName": "Administrator", "lastName": "", "username": "admin", "password": "admin", "id": "99" };
         this.unicornUser = { "firstName": "Bruce", "lastName": "the unicorn", "username": "unicorn", "password": "123456", "id": "98" };
     }
     AppComponent.prototype.ngOnInit = function () {
@@ -622,7 +622,7 @@ exports.routing = router_1.RouterModule.forRoot(appRoutes);
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n    <h1>Hi {{currentUser.firstName}}!</h1>\r\n    <p>You're logged in to the Cyber Kids website.</p>\r\n    <div *ngIf=\"isAdmin\">\r\n    <br>\r\n    <h3>Administrator actions: registered users:</h3>\r\n    <ul>\r\n        <li *ngFor=\"let user of users\">\r\n            {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n            - <a (click)=\"deleteUser(user.id)\">Delete</a>\r\n        </li>\r\n    </ul>\r\n    </div>\r\n    <div class=\"alert alert-danger\">\r\n        HAHA! you thought I only hacked your users? think again! I am the admin of this website now\r\n    </div>\r\n    <br>\r\n    <p><a [routerLink]=\"['/login']\">Logout</a></p>\r\n</div>"
+module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n    <h1>Hi {{currentUser.firstName}}!</h1>\r\n    <p>You're logged in to the Cyber Kids website.</p>\r\n    <div *ngIf=\"!isAdmin\">\r\n        <div class=\"alert alert-danger\">\r\n        HAHA! you thought I only hacked your users? think again! I am the admin of this website now\r\n        </div>\r\n        <div>\r\n            <img src=\"../assets/images/unicorn-stego-use-the-source.png\" class=\"img-thumbnail\" width=\"304\" height=\"236\">\r\n        </div>\r\n    </div>\r\n    <div *ngIf=\"isAdmin\">\r\n        <img src=\"../assets/images/_hack_squad_2.png\" class=\"img-thumbnail\" width=\"304\" height=\"236\">\r\n        <br>\r\n    </div>\r\n    <div *ngIf=\"1==0\">\r\n        <h3>Administrator actions: registered users:</h3>\r\n        <ul>\r\n            <li *ngFor=\"let user of users\">\r\n                {{user.username}} ({{user.firstName}} {{user.lastName}}) - <a (click)=\"deleteUser(user.id)\">Delete</a>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n\r\n    <br>\r\n    <p><button [routerLink]=\"['/login']\" class=\"btn btn-primary\">Logout</button></p>\r\n</div>"
 
 /***/ }),
 
@@ -709,7 +709,7 @@ __export(__webpack_require__("../../../../../src/app/login/login.component.ts"))
 /***/ "../../../../../src/app/login/login.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n    <h2>Cyber Kids Login</h2>\r\n    <form name=\"form\" (ngSubmit)=\"f.form.valid && login()\" #f=\"ngForm\" novalidate>\r\n        <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !username.valid }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"model.username\" #username=\"ngModel\" required />\r\n            <div *ngIf=\"f.submitted && !username.valid\" class=\"help-block\">Username is required</div>\r\n        </div>\r\n        <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !password.valid }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\" #password=\"ngModel\" required />\r\n            <div *ngIf=\"f.submitted && !password.valid\" class=\"help-block\">Password is required</div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\r\n            <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n    </form>\r\n</div>\r\n"
+module.exports = "<div class=\"col-md-6 col-md-offset-3\">\r\n    <h2>Cyber Kids Login</h2>\r\n    <form name=\"form\" (ngSubmit)=\"f.form.valid && login()\" #f=\"ngForm\" novalidate>\r\n        <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !username.valid }\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"model.username\" #username=\"ngModel\" required />\r\n            <div *ngIf=\"f.submitted && !username.valid\" class=\"help-block\">Username is required</div>\r\n        </div>\r\n        <div class=\"form-group\" [ngClass]=\"{ 'has-error': f.submitted && !password.valid }\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"model.password\" #password=\"ngModel\" required />\r\n            <div *ngIf=\"f.submitted && !password.valid\" class=\"help-block\">Password is required</div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\r\n            <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n<!--            <a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a> -->\r\n        </div>\r\n    </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -852,7 +852,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "a {\r\n    cursor: pointer;\r\n}\r\n\r\n.help-block {\r\n    font-size: 12px;\r\n}", ""]);
+exports.push([module.i, "a {\r\n    cursor: pointer;\r\n}\r\n\r\n.help-block {\r\n    font-size: 12px;\r\n}\r\n\r\n.form-group {\r\n    border-color: #ff0000;\r\n}", ""]);
 
 // exports
 

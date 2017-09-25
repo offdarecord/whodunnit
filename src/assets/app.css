@@ -5,3 +5,7 @@
 .help-block {
     font-size: 12px;
 }
+
+.form-group {
+    border-color: #ff0000;
+}
