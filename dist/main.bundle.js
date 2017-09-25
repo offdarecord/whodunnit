@@ -508,7 +508,7 @@ __webpack_require__("../../../../../src/assets/app.css");
 var AppComponent = (function () {
     function AppComponent(userService) {
         this.userService = userService;
-        this.adminUser = { "firstName": "Administrator", "lastName": "", "username": "admin", "password": "admin", "id": "99" };
+        this.adminUser = { "firstName": "admin", "lastName": "", "username": "admin", "password": "admin", "id": "99" };
         this.unicornUser = { "firstName": "Bruce", "lastName": "the unicorn", "username": "unicorn", "password": "123456", "id": "98" };
     }
     AppComponent.prototype.ngOnInit = function () {
